@@ -1,0 +1,245 @@
+html * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px !important;
+    padding:0px !important;
+    background: var(--kcolorscheme-background) !important;
+    color: var(--kcolorscheme-text) !important;
+}
+
+
+a {
+    color: var(--kcolorscheme-text-link);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.style-subject {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.k-btn a {
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid var(--kcolorscheme-text-disabled);
+    color: var(--kcolorscheme-text-disabled) !important;
+    background: transparent;
+    padding: 0.25rem;
+    border-radius: 2px;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.k-btn a:hover {
+    background: var(--kcolorscheme-highlight);
+    color: var(--kcolorscheme-highlight-text) !important;
+}
+
+
+.k-muted {
+    color: var(--kcolorscheme-text-disabled);
+}
+
+.photo-wrapper {
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    background-color: var(--kcolorscheme-background);
+    border-radius: 3rem;
+    padding: 1rem;
+    border: 3px solid var(--kcolorscheme-text-disabled);
+}
+
+.photo-wrapper .contact-photo {
+    min-width: 5rem;
+    min-height: 5rem;
+}
+
+
+.k-table {
+    border-collapse: collapse;
+    margin:0;
+    padding:0;
+}
+
+.k-info-container .label{
+    width: 3rem;
+    padding: 0.25rem;
+    text-align: right;
+    margin-right: 0.2rem;
+}
+
+.k-info-container .info_date {
+    text-align: right;
+}
+
+
+.info-details a {
+    word-wrap: break-word!important;
+    word-break: break-word!important;
+
+}
+
+
+body > div:first-child:not(#k-main) {
+    padding: 1rem;
+    padding-left: 4rem;
+    margin: 0.5rem;
+    font-weight: bold;
+    position:relative;
+}
+body > div:first-child:not(#k-main):before {
+    position: absolute;
+    left: 1rem;;
+    top: calc(50% - 1rem);
+    content: '\f071';
+    font-family: var(--fa-family-classic);
+    font-size: 2rem;
+}
+
+#kmailContent {
+    width: 100%
+    padding-right: 1rem;
+}
+
+#kmailContent div.inlineMessagePositive,
+#kmailContent div.inlineMessageInformation,
+#kmailContent div.inlineMessageWarning,
+#kmailContent div.inlineMessageError {
+    margin: 0 1rem 0 0  !important;
+}
+
+
+#kmailContent * {
+    background: transparent !important;
+    color: var(--kcolorscheme-text) !important;
+}
+
+#kmailContent a {
+    color: var(--kcolorscheme-text-link) !important;
+}
+
+#kmailContent img {
+    max-width: 100% !important;
+}
+
+#attachmentInjectionPoint > div {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#attachmentInjectionPoint > div > div,
+#attachmentInjectionPoint > div > div > div {
+    display: inline-block;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+#attachmentInjectionPoint > div > div  span, 
+#attachmentInjectionPoint > div > div > div  span
+{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+}
+
+
+table.signOkKeyOk,
+table.encr,
+table.signErr {
+    padding: 0;
+    margin:0;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+
+#kmailContent table.signOkKeyOk tr.signOkKeyOkH > td {
+    background: var(--kcolorscheme-positive-background) !important;
+    color: var(--kcolorscheme-positive-text) !important;
+    padding: 1rem;
+}
+#kmailContent table.signOkKeyOk tr.signOkKeyOkH:first-child  > td {
+    position:relative;
+    padding-left: 4rem;
+ 
+}
+
+#kmailContent table.signOkKeyOk tr.signOkKeyOkH:first-child > td:before {
+    position: absolute;
+    left: 1rem;;
+    top: calc(50% - 1rem);
+    content: '\f4fc';
+    font-family: var(--fa-family-classic);
+    font-size: 2rem;
+}
+
+#kmailContent table.signOkKeyOk tr.signOkKeyOkB > td {
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+
+#kmailContent table.signErr tr.signErrH > td  {
+    background: var(--kcolorscheme-negative-background) !important;
+    color: var(--kcolorscheme-negative-text) !important;
+    padding: 1rem;
+}
+
+#kmailContent table.signErr tr.signErrH:first-child  > td {
+    position:relative;
+    padding-left: 4rem;
+ 
+}
+
+#kmailContent table.signErr tr.signErrH:first-child > td:before {
+    position: absolute;
+    left: 1rem;;
+    top: calc(50% - 1rem);
+    content: '\f235';
+    font-family: var(--fa-family-classic);
+    font-size: 2rem;
+}
+
+
+#kmailContent table.signErr tr.signErrB > td {
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+
+#kmailContent table.encr tr.encrH > td {
+    background: var(--kcolorscheme-positive-background) !important;
+    color: var(--kcolorscheme-positive-text) !important;
+    padding: 1rem;
+}
+
+#kmailContent table.encr tr.encrH:first-child  > td {
+    padding-left: 4rem;
+    position:relative;
+}
+
+#kmailContent table.encr tr.encrH:first-child > td:before {
+    position: absolute;
+    left: 1rem;;
+    top: calc(50% - 1rem);
+    content: '\f09c';
+    font-family: var(--fa-family-classic);
+    font-size: 2rem;
+}
+
+#kmailContent table.encr tr.encrH > td ul {
+    list-style-type: disc !important;
+}
+
+#kmailContent table.encr tr.encrB > td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0;
+    margin:0;
+    border: 0;
+}
