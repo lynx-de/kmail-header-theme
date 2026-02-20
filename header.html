@@ -1,0 +1,71 @@
+<link href="{{ header.absoluteThemePath }}css/fontawesome_7_free.css" rel="stylesheet" type="text/css" />
+<link href="{{ header.absoluteThemePath }}css/utility.css" rel="stylesheet" type="text/css" />
+<link href="{{ header.absoluteThemePath }}css/style.css" rel="stylesheet" type="text/css" />
+
+<div class="d-flex flex-column p-2" id="k-main">
+	<div class="d-flex flex-column k-alternate-background p-2">
+		<div class="subject"><span class="style-subject">{{ header.subject|safe }}</span></div>
+	</div>
+
+	<div class="d-flex k-alternate-background mt-4 flex-row">
+		<div class="photo p-4">
+			<div class="photo-wrapper d-flex align-items-center justify-content-center">
+			{{ header.from }}
+				{% if header.photourl %}
+				<img
+					src="{{ header.photourl }}"
+					class="img-thumbnail contact-photo"
+				/>
+				{% else %}
+
+				<img
+					src="{{ header.absoluteThemePath }}/photo.svg"
+					width="{{ header.photowidth }}"
+					height="{{ header.photoheight }}"
+					class="img-thumbnail"
+				/>
+				{% endif %}
+			</div>
+		</div>
+		<div class="d-flex flex-column flex-grow-1">
+			<div class="d-flex flex-column p-4">
+				<table class="k-table k-info-container">
+					<tr>
+						<td class="k-muted label">{{ header.fromi18n }}</td>
+						<td colspan="2" class="text-wrap text-break k-btn">{{ header.from.fullAddress|safe }}</td>
+					</tr>
+					<tr>
+						<td class="k-muted label">{{ header.toi18n }}</td>
+						<td class="text-wrap text-break k-btn">{{ header.to.expandableTo|safe }}</td>
+						<td class="info_date"> {{ header.date.fancyshort|safe }}</td>
+					</tr>
+					{% if header.cc.isSet %}
+					<tr>
+						<td class="k-muted label">CC:</td>
+						<td class="text-wrap text-break k-btn">{{ header.cc.expandableCc|safe }}</td>
+					</tr>
+					{% endif %}
+					{% if header.bcc.isSet %}
+					<tr>
+						<td class="k-muted label">BCC:</td>
+						<td class="text-wrap text-break k-btn">{{ header.bcc.expandableBcc|safe }}</td>
+					</tr>
+					{% endif %}
+				</table>
+			</div>
+		</div>
+	</div>
+		{% if header.hasAttachment %}
+	<div class="d-flex flex-row mt-2 k-alternate-background p-2">
+		<div class="d-flex flex-column" id="kmailHeaderAttachments">
+			<div class="d-flex flex-row mb-2">
+				<div class="kmailHeaderAttachmentsTitle k-muted">
+				{{ header.attachmentI18n }} {{ header.replyallaction }}
+				</div>
+			</div>
+			<div id="attachmentInjectionPoint" class="flex-grow-1 k-btn">{{ header.attachmentHtml|safe }}</div>
+		</div>
+	</div>
+    {% endif %}
+	<div id="kmailContent" class="mt-4">
+
