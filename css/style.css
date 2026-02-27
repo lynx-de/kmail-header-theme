@@ -1,14 +1,21 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 html * {
     box-sizing: border-box;
 }
 
 body {
-    margin: 0px !important;
-    padding:0px !important;
+    margin: 0 !important;
+    padding:0 !important;
     background: var(--kcolorscheme-background) !important;
     color: var(--kcolorscheme-text) !important;
+    height: 100%;
 }
-
 
 a {
     color: var(--kcolorscheme-text-link);
@@ -21,6 +28,42 @@ a {
     font-weight: bold;
     font-size: 1.5rem;
 }
+
+.k-mail-header {
+    position: relative;
+}
+
+.k-mail-header a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--kcolorscheme-text-link) !important;
+    padding: 0.25rem;
+    border-radius: 2px;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+    /*border: 1px solid color-mix(in oklab, var(--kcolorscheme-text-link), white 30%);*/
+    /*border: 1px solid var(--kcolorscheme-text-disabled);*/
+}
+
+.k-mail-header a:hover {
+    background: var(--kcolorscheme-text-link);
+    color: var(--kcolorscheme-highlight-text) !important;
+}
+
+.k-mail-header-background {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 4rem center;
+    opacity: 0.6
+}
+/*.k-mail-header .info_date {*/
+/*    color: var(--kcolorscheme-highlight-text);*/
+/*}*/
 
 .k-btn a {
     text-decoration: none;
@@ -38,7 +81,6 @@ a {
     background: var(--kcolorscheme-highlight);
     color: var(--kcolorscheme-highlight-text) !important;
 }
-
 
 .k-muted {
     color: var(--kcolorscheme-text-disabled);
@@ -59,11 +101,11 @@ a {
     min-height: 5rem;
 }
 
-
 .k-table {
     border-collapse: collapse;
     margin:0;
     padding:0;
+    max-width: 100% !important;
 }
 
 .k-info-container .label{
@@ -77,13 +119,15 @@ a {
     text-align: right;
 }
 
-
 .info-details a {
     word-wrap: break-word!important;
     word-break: break-word!important;
-
 }
 
+#k-main {
+    width: 100%;
+    height: 100%;
+}
 
 body > div:first-child:not(#k-main) {
     padding: 1rem;
@@ -102,8 +146,24 @@ body > div:first-child:not(#k-main):before {
 }
 
 #kmailContent {
-    width: 100%
+    width: 100%;
     padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    overflow: auto;
+    /*scrollbar-color: var(--kcolorscheme-text-disabled) transparent;*/
+}
+
+#kmailContent::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: transparent; /* or add it to the track */
+}
+
+/* Add a thumb */
+#kmailContent::-webkit-scrollbar-thumb {
+    background: var(--kcolorscheme-text-disabled);
+    border-radius: 10px;
 }
 
 #kmailContent div.inlineMessagePositive,
@@ -242,4 +302,11 @@ table.signErr {
     padding-left: 0;
     margin:0;
     border: 0;
+}
+
+#kmailContent .inlineMessageError {
+    border: none;
+    box-shadow: none;
+    background-color: var(--kcolorscheme-negative-background) !important;
+    color: var(--kcolorscheme-negative-text) !important;
 }

@@ -151,7 +151,8 @@
 }
 
 .k-alternate-background {
-    background: color-mix(in oklab, var(--kcolorscheme-background), black 5%);
+    /*background: color-mix(in oklab, var(--kcolorscheme-background), black 5%);*/
+    background: color-mix(in oklab, var(--kcolorscheme-background), var(--kcolorscheme-text-disabled) 5%);
     color: color-mix(in oklab, var(-kcolorscheme-text), black 5%);
 }
 
@@ -178,4 +179,16 @@
 .text-break {
     word-wrap: break-word!important;
     word-break: break-word!important;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.background-blur {
+    backdrop-filter: blur(25px);
 }
